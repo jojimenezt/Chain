@@ -87,6 +87,7 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
         size++;
     }
     
+    @Override
     public String toString(){
         StringBuilder s=new StringBuilder("[");
         for (String x : this) {
@@ -97,6 +98,8 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
             s.setLength(s.length()-2);
         
         s.append("]");
+        
+        return new String(s);
     }
     
     public Iterator<String> iterator(){
