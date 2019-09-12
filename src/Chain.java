@@ -47,4 +47,23 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
         
     }
     
+    public void add(int index,String theElement){
+        
+    }
+    
+    public String toString(){
+        
+    }
+    
+    public Iterator<String> iterator(){
+        
+    }
+    
+    private class ChainIterator implements Iterator<String>{
+        
+    }
+    
+    public static void main(String[] args) {
+        
+    }
 }
