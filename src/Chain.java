@@ -63,15 +63,44 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
     }
     
     public String toString(){
+        StringBuilder s=new StringBuilder("[");
+        for (String x : this) {
+            s.append(Objects.toString(x)+", ");
+        }
         
+        if (size>0)
+            s.setLength(s.length()-2);
+        
+        s.append("]");
     }
     
     public Iterator<String> iterator(){
-        
+        return new ChainIterator();
     }
     
     private class ChainIterator implements Iterator<String>{
+        private ChainNode<String> nextNode;
+        public ChainIterator(){
+            nextNode=firstNode;
+        }
         
+        public boolean hasNext(){
+            return nextNode!=null;
+        }
+        
+        public String next(){
+            if (nextNode!=null) {
+                String elementToReturn=nextNode.element;
+                nextNode=nextNode.next;
+                return elementToReturn;
+            }else{
+                throw new NoSuchElementException("No next element");
+            }
+        }
+        
+        public void remove(){
+            throw new UnsupportedOperationException("remove not supported");
+        }
     }
     
     public static void main(String[] args) {
