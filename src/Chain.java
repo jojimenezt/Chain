@@ -38,7 +38,12 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
     }
     
     public String get(int index){
-        
+        checkIndex(index);
+        ChainNode<String> currentNode  = firstNode;
+        for (int i = 0; i < index; i++) {
+            currentNode=currentNode.next;
+        }
+        return currentNode.element;
     }
     
     public int indexOf(String theElement){
