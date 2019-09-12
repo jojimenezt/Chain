@@ -38,7 +38,12 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
     }
     
     public String get(int index){
-        
+        checkIndex(index);
+        ChainNode<String> currentNode =firstNode;
+        for (int i = 0; i < index; i++) {
+            currentNode=currentNode.next;
+        }
+        return currentNode.element;
     }
     
     public int indexOf(String theElement){
@@ -62,6 +67,7 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
         
     }
     
+    @Override
     public String toString(){
         StringBuilder s=new StringBuilder("[");
         for (String x : this) {
@@ -101,9 +107,5 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
         public void remove(){
             throw new UnsupportedOperationException("remove not supported");
         }
-    }
-    
-    public static void main(String[] args) {
-        Chain<String> x=new Chain<>();
     }
 }
