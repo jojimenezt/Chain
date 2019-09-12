@@ -24,11 +24,11 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
     }*/
     
     public boolean isEmpty(){
-        
+        return size==0;
     }
     
     public int size(){
-        
+        return size
     }
     
     void CheckIndex(int index){
