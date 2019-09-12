@@ -31,18 +31,27 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
         return size;
     }
     
-    void CheckIndex(int index){
+    void checkIndex(int index){
         if (index<0||index>=size) {
             throw new IndexOutOfBoundsException("index = "+index+"  size = "+size);
         }
     }
     
     public String get(int index){
-        checkIndex(index)
+        
     }
     
     public int indexOf(String theElement){
-        
+        ChainNode<String> currentNode=firstNode;
+        int index=0;
+        while(currentNode !=null && !currentNode.element.equals(theElement)){
+            currentNode=currentNode.next;
+            index++;
+        }
+        if (currentNode==null) 
+            return -1;
+        else 
+            return index;
     }
     
     public String remove(int index){
