@@ -55,7 +55,21 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
     }
     
     public String remove(int index){
+        checkIndex( index );
         
+        String removedElement= null;
+        if (index==0){
+            removedElement = firstNode.element;
+            firstNode= firstNode.next;
+        }else{
+            ChainNode<String> q= firstNode;
+            for(int i=0; i< index-1; i++){
+                q=q.next;
+            }
+            removedElement = q.next.element;
+            q.next = q.next.next;
+        }
+        size --;
     }
     
     public void add(int index,String theElement){
