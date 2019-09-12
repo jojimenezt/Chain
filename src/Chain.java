@@ -135,8 +135,4 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
             throw new UnsupportedOperationException("remove not supported");
         }
     }
-    
-    public static void main(String[] args) {
-        
-    }
 }
