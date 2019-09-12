@@ -75,6 +75,7 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
             q.next = q.next.next;
         }
         size --;
+        return removedElement;
     }
     
     public void add(int index,String theElement){
