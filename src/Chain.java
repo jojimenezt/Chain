@@ -104,6 +104,6 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
     }
     
     public static void main(String[] args) {
-        
+        Chain<String> x=new Chain<>();
     }
 }
