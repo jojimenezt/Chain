@@ -28,15 +28,17 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
     }
     
     public int size(){
-        return size
+        return size;
     }
     
     void CheckIndex(int index){
-        
+        if (index<0||index>=size) {
+            throw new IndexOutOfBoundsException("index = "+index+"  size = "+size);
+        }
     }
     
     public String get(int index){
-        
+        checkIndex(index)
     }
     
     public int indexOf(String theElement){
