@@ -43,5 +43,8 @@ public class Chain<String> implements LinearList<String>,Iterable<String>{
         
     }
     
-    public String 
+    public String remove(int index){
+        
+    }
+    
 }
